@@ -30,7 +30,8 @@ ag <-Agave$new( baseUrl = myCreds[["AGAVE_BASE_URL"]],
                 cacheDir="~/Stapleton_Lab/agave/cache")
 
 
-# clientData <- Client$new(clientName="rAgave")
+clientData <- Client$new(clientName="rAgave")
+clientData$clientName
 # ag$clients$add_client(body=clientData)
 ag$clients$get_client(clientName = "rAgave")
 ag$clients$list_clients()

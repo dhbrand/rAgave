@@ -1,3 +1,4 @@
+lib
 library(rAgave)
 
 myCreds <- Sys.getenv( c("AGAVE_USERNAME", "AGAVE_PASSWORD", "AGAVE_TENANT", "AGAVE_BASE_URL"), names = TRUE )
@@ -15,3 +16,6 @@ str(ag$files$list(path = "dhbrand/ExampleData/DongWang/"))
 ag$files$upload(destSystemId = "data.iplantcollaborative.org",destDirPath = "/dhbrand/", filename = "Parallel PDF.R")
 
 df <- capture.output(ag$files$download(path = "/dhbrand/ExampleData/DongWang/dongwang.ped",filename = "dongwang.ped", overwrite = TRUE))
+
+ag$restore()
+str(ag$tokenInfo$toJSON())
